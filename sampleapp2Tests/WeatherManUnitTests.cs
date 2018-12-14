@@ -8,10 +8,11 @@ namespace sampleappTests
     public class WeatherManUnitTests
     {
         [Test]
+        [TestCase(0, true)]
         [TestCase(1, true)]
         [TestCase(2, true)]
         [TestCase(3, true)]
-        [TestCase(8, false)]
+        [TestCase(6, false)]
         public void IsValidDayIndex_Values_CorrectResponse(int dayIndex, bool expectedOutput)
         {
             var weatherMan = new WeatherMan();            

@@ -14,9 +14,12 @@ namespace sampleapp
         private int dayIndex = 0;
         public int DayIndex {
             get { return dayIndex; }
-            set { dayIndex = value; }
+            set {
+                if (!IsValidDayIndex(value))
+                    throw new Exception(); 
+                dayIndex = value; 
+            }
         }
-//2357024
 
         public WeatherModel getWeather()
         {

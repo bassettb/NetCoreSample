@@ -17,7 +17,7 @@ namespace sampleapp
             weatherMan.Location = "2357024";
             weatherMan.DayIndex = 1;
             var weather = weatherMan.getWeather();
-
+            
             return CreateResponse(weather);
         }
 

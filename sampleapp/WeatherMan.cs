@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace sampleapp
 {
-    internal class WeatherMan
+    public class WeatherMan
     {
         private readonly string url = "https://www.metaweather.com";
         private readonly string locationResource = "api/location/{location}/";
@@ -33,6 +33,11 @@ namespace sampleapp
             var cond = (string)jObj.SelectToken($"consolidated_weather[{DayIndex}].weather_state_name");
 
             return new WeatherModel { Temperature = temp, Condition = cond };
+        }
+
+        public bool IsValidDayIndex(int dayIndex)
+        {
+            return (dayIndex >=0 && dayIndex < 5);
         }
     }
 }
